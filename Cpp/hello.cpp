@@ -7,7 +7,6 @@ using namespace std;
 int main() {
     // 创建一个 256x256 的灰度图，全部像素初始化为 128
     Mat img(256, 256, CV_8UC1, Scalar(128));
-
     if (img.empty()) {
         cout << "Failed to create image" << endl;
         return -1;
