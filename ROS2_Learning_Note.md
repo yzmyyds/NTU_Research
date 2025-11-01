@@ -36,3 +36,35 @@ sudo rosdep init
 rosdep update
 ```
 5. 测试turtle
+
+> 2025/11/1
+## 配置、编写与编译
+1. 创建工作空间
+```bash
+mkdir -p ~/ros2_ws/src
+cd ~/ros2_ws
+colcon build
+```
+2. 创建功能包
+- Cpp：
+  ```bash
+  ros2 pkg create --build-type ament_cmake my_cpp_pkg --dependencies rclcpp --node-name helloworld_node
+  ```
+- Python:
+  ```bash
+  ros2 pkg create --build-type ament_python my_python_pkg --dependencies rclpy --node-name helloworld_node
+  ```
+3. 编译（回到工作空间）
+```bash
+colcon build
+```
+4. 执行
+```bash
+source install/setup.bash
+ros2 run my_cpp_pkg helloworld_node
+
+ros2 run my_python_pkg helloworld_node
+```
+## 基本语法
+
+### Cpp 语法
