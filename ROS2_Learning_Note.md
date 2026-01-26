@@ -68,3 +68,22 @@ ros2 run my_python_pkg helloworld_node
 ## 基本语法
 
 ### Cpp 语法
+
+> 2026/01/26
+## Intro:
+Since doing dissertation, I successfully get the permission to use the EEE cluster server, which contains A6000 and A5000 GPUs, much better than mine. I do not want to waste this source, so I decide to transmit my study from WSL to online server. Following is my progress.
+
+## Environment & Infrastructure
+
+- __Storage Strategy:__ Defined a clear boundary between your SSD (20GB) for high-frequency compilation/I/O and HDD (50GB) for bulk data storage.
+
+- __Permission Bypass:__ Successfully bypassed sudo restrictions by installing ROS2 and ```colcon``` tools directly into your SSD directory using ```Mamba``` and the ```--prefix``` flag.
+
+- __Resource Management__: Mastered the use of srun to hijack GPU A5000 nodes for high-performance robotics development.
+
+## Engineering Workflow
+- __Workspace Mastery:__ Established a standard ROS2 workspace (learning_ws).
+
+- __Automation:__ Configured .bashrc aliases to automate the "```loading``` → ```activating``` → ```navigating``` → ```sourcing```" sequence in one command.
+
+- __Development Cycle:__ Successfully executed the standard ROS2 development loop: Modify Code → colcon build → source → ros2 run.
