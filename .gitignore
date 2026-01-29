@@ -1,0 +1,18 @@
+# ROS2 编译产生的中间件和结果（极占空间，且不可移植）
+build/
+install/
+log/
+
+# Python 产生的缓存
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# 编辑器配置（可选，避免污染他人环境）
+.vscode/
+.idea/
+.swp
+
+# 系统产生的杂物
+.DS_Store
