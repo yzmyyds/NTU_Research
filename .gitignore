@@ -1,3 +1,4 @@
+
 # ROS2 编译产生的中间件和结果（极占空间，且不可移植）
 build/
 install/
@@ -16,3 +17,7 @@ __pycache__/
 
 # 系统产生的杂物
 .DS_Store
+
+.venv
+*.store
+
