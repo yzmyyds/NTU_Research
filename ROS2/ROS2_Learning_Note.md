@@ -87,3 +87,22 @@ Since doing dissertation, I successfully get the permission to use the EEE clust
 - __Automation:__ Configured .bashrc aliases to automate the "```loading``` → ```activating``` → ```navigating``` → ```sourcing```" sequence in one command.
 
 - __Development Cycle:__ Successfully executed the standard ROS2 development loop: Modify Code → colcon build → source → ros2 run.
+
+>2026/01/29
+## Simple Communicate with Python
+It is important in robot control with ROS2 to send the parameters from tool or sensor to actor. I learned to write two simple node to realize message transmission.
+- "talker" Node:
+  ```bash
+  self.publisher_=self.create_publisher(String, "chatter", 10)
+  ```
+  Use above code to create a pulisher to publish message in "chatter" channel. Set a timer to send message each 1 second with ```self.publisher_.publish(msg)```
+- "listener" Node:
+  ``` bash
+  self.subscription_=self.create_subscription(String, "chatter", self.listener_callback, 10)
+  ```
+  Listen the "chatter" message, and report it with 
+  ```bash
+  def listener_callback(self, msg):
+        self.get_logger().info(f'I heard: "{msg.data}"')
+  ```
+In addition to above, I added the rclcpp tool with ```ros2_cpp`` package, preparing for cpp version learning.
