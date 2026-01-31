@@ -111,7 +111,7 @@ In addition to above, I added the rclcpp tool with ```ros2_cpp`` package, prepar
 ## First cpp Node Program Configuration
 Finish the firest program implementation by add confi to ```CMakeList.txt```.  
 For each new cpp node, need to add three command:
-1. ```add_executable(_ _)`` [parameter: (node name) (relative path)]
+1. ```add_executable(_ _)``` [parameter: (node name) (relative path)]
 2. ```ament_target_dependencies(_ _)``` use to assign target node to appropriate pkg, rclcpp [parameter: (node name) (rclcpp)]
 3. ```install(TARGETS _ DESTINATION lib/${PROJECT_NAME})``` install the executable node into lib [parameter: (node name)]
 ```bash
