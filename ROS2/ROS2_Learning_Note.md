@@ -106,3 +106,23 @@ It is important in robot control with ROS2 to send the parameters from tool or s
         self.get_logger().info(f'I heard: "{msg.data}"')
   ```
 In addition to above, I added the rclcpp tool with ```ros2_cpp`` package, preparing for cpp version learning.
+
+>2026-01-31
+## First cpp Node Program Configuration
+Finish the firest program implementation by add confi to ```CMakeList.txt```.  
+For each new cpp node, need to add three command:
+1. ```add_executable(_ _)`` [parameter: (node name) (relative path)]
+2. ```ament_target_dependencies(_ _)``` use to assign target node to appropriate pkg, rclcpp [parameter: (node name) (rclcpp)]
+3. ```install(TARGETS _ DESTINATION lib/${PROJECT_NAME})``` install the executable node into lib [parameter: (node name)]
+```bash
+add_executable(cpp_node src/first_node.cpp)
+ament_target_dependencies(cpp_node rclcpp)
+
+install(
+  TARGETS
+  cpp_node
+  DESTINATION
+  lib/${PROJECT_NAME}
+)
+```
+The cpp implementation and grammer are more complex than python, needing more learning.
